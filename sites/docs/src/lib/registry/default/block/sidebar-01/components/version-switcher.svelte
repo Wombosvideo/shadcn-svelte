@@ -1,9 +1,9 @@
 <script lang="ts">
 	import * as DropdownMenu from "$lib/registry/default/ui/dropdown-menu/index.js";
 	import * as Sidebar from "$lib/registry/default/ui/sidebar/index.js";
-	import Check from "lucide-svelte/icons/check";
-	import ChevronsUpDown from "lucide-svelte/icons/chevrons-up-down";
-	import GalleryVerticalEnd from "lucide-svelte/icons/gallery-vertical-end";
+	import Check from "@lucide/svelte/icons/check";
+	import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
+	import GalleryVerticalEnd from "@lucide/svelte/icons/gallery-vertical-end";
 
 	let { versions, defaultVersion }: { versions: string[]; defaultVersion: string } = $props();
 
@@ -33,7 +33,7 @@
 					</Sidebar.MenuButton>
 				{/snippet}
 			</DropdownMenu.Trigger>
-			<DropdownMenu.Content class="w-[--bits-dropdown-menu-anchor-width]" align="start">
+			<DropdownMenu.Content class="w-[var(--bits-dropdown-menu-anchor-width)]" align="start">
 				{#each versions as version (version)}
 					<DropdownMenu.Item onSelect={() => (selectedVersion = version)}>
 						v{version}

@@ -15,7 +15,7 @@ description: How to setup shadcn-svelte manually.
 
 Use the `sv` CLI to add Tailwind CSS to your project.
 
-<PMExecute command="sv add tailwindcss" />
+<PMExecute command="sv@0.6.18 add tailwindcss" />
 
 ### Add dependencies
 
@@ -25,9 +25,9 @@ Add the following dependencies to your project:
 
 ### Add icon library
 
-Install `lucide-svelte`:
+Install `@lucide/svelte`:
 
-<PMInstall command="lucide-svelte" />
+<PMInstall command="@lucide/svelte" />
 
 ### Configure path aliases
 

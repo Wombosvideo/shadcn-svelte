@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CirclePlus from "lucide-svelte/icons/circle-plus";
+	import CirclePlus from "@lucide/svelte/icons/circle-plus";
 	import { AlbumArtwork, Menu, PodcastEmptyPlaceholder, Sidebar } from "./(components)/index.js";
 	import { playlists } from "./(data)/playlists.js";
 	import { listenNowAlbums, madeForYouAlbums } from "./(data)/albums.js";
@@ -10,10 +10,8 @@
 </script>
 
 <div class="md:hidden">
-	<enhanced:img src="$lib/img/examples/music-light.png" alt="Music" class="block dark:hidden"
-	></enhanced:img>
-	<enhanced:img src="$lib/img/examples/music-dark.png" alt="Music" class="hidden dark:block"
-	></enhanced:img>
+	<img src="/img/examples/music-light.png" alt="Music" class="block dark:hidden" />
+	<img src="/img/examples/music-dark.png" alt="Music" class="hidden dark:block" />
 </div>
 <div class="hidden md:block">
 	<Menu />

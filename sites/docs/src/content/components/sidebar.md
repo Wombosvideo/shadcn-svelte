@@ -216,11 +216,11 @@ We'll use the `Sidebar.Menu` component in a `Sidebar.Group`.
 
 ```svelte showLineNumbers title="src/lib/components/app-sidebar.svelte"
 <script lang="ts">
-  import Calendar from "lucide-svelte/icons/calendar";
-  import House from "lucide-svelte/icons/house";
-  import Inbox from "lucide-svelte/icons/inbox";
-  import Search from "lucide-svelte/icons/search";
-  import Settings from "lucide-svelte/icons/settings";
+  import Calendar from "@lucide/svelte/icons/calendar";
+  import House from "@lucide/svelte/icons/house";
+  import Inbox from "@lucide/svelte/icons/inbox";
+  import Search from "@lucide/svelte/icons/search";
+  import Settings from "@lucide/svelte/icons/settings";
   import * as Sidebar from "$lib/components/ui/sidebar/index.js";
 
   // Menu items.
@@ -290,7 +290,7 @@ We'll use the `Sidebar.Menu` component in a `Sidebar.Group`.
 
 The components in the `sidebar-*.svelte` files are built to be composable i.e you build your sidebar by putting the provided components together. They also compose well with other shadcn-svelte components such as `DropdownMenu`, `Collapsible`, `Dialog`, etc.
 
-**If you need to change the code in the `sidebar-*.svelte` files, you are encourage to do so. The code is yours. Use the provided components as a starting point to build your own**
+**If you need to change the code in the `sidebar-*.svelte` files, you are encouraged to do so. The code is yours. Use the provided components as a starting point to build your own**
 
 In the next sections, we'll go over each component and how to use them.
 

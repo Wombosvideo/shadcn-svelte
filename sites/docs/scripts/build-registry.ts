@@ -15,6 +15,7 @@ import prettier from "prettier";
 import prettierPluginSvelte from "prettier-plugin-svelte";
 
 const REGISTRY_PATH = path.resolve("static", "registry");
+const THEMES_CSS_PATH = path.resolve("static");
 const REGISTRY_IGNORE = ["super-form"];
 
 const prettierConfig: prettier.Config = {
@@ -145,7 +146,7 @@ export const Index = {
 			type: "${item.type}",
 			registryDependencies: ${JSON.stringify(item.registryDependencies)},
 			${componentLine},
-			files: [${resolveFiles.map((file) => `"${file}"`)}],
+			files: [${resolveFiles.map((file) => `"${file.replaceAll("\\", "/")}"`)}],
 			raw: () => import("../lib/registry/${style.name}/${type}/${
 				item.name
 			}.svelte?raw").then((m) => m.default),
@@ -259,8 +260,8 @@ export const Index = {
 		.map((item) => ({
 			...item,
 			style: undefined, // discard `style`
-			// The `default` style uses `lucide-svelte`, so we'll discard it for the purposes of the index
-			dependencies: item.dependencies.filter((dep) => dep !== "lucide-svelte"),
+			// The `default` style uses `@lucide/svelte`, so we'll discard it for the purposes of the index
+			dependencies: item.dependencies.filter((dep) => dep !== "@lucide/svelte"),
 			// We only want the relative file paths
 			files: item.files.map((file) => ({ path: file.path, type: "registry:ui" })),
 		}));
@@ -369,7 +370,7 @@ export const Index = {
 		);
 	}
 
-	writeFileWithDirs(path.join(REGISTRY_PATH, `themes.css`), themeCSS.join("\n"), "utf-8");
+	writeFileWithDirs(path.join(THEMES_CSS_PATH, `themes.css`), themeCSS.join("\n"), "utf-8");
 
 	console.info("✅ Done!");
 }

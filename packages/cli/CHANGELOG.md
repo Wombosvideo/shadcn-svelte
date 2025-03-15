@@ -1,5 +1,23 @@
 # shadcn-svelte
 
+## 1.0.0-next.7
+
+### Patch Changes
+
+- 8826014: feat: Improved error message when fetching the registry fails
+
+## 1.0.0-next.6
+
+### Patch Changes
+
+- 7669720: fix: workaround caching issue preventing the correct registry from being fetched
+
+## 1.0.0-next.5
+
+### Patch Changes
+
+- 61d98fd: chore: Add warning for incompatible dependency
+
 ## 1.0.0-next.4
 
 ### Patch Changes

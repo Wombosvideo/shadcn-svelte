@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as Sidebar from "$lib/registry/default/ui/sidebar/index.js";
 	import * as DropdownMenu from "$lib/registry/default/ui/dropdown-menu/index.js";
-	import ChevronDown from "lucide-svelte/icons/chevron-down";
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 </script>
 
 <Sidebar.Provider>
@@ -21,7 +21,7 @@
 								</Sidebar.MenuButton>
 							{/snippet}
 						</DropdownMenu.Trigger>
-						<DropdownMenu.Content class="w-[--bits-dropdown-menu-anchor-width]">
+						<DropdownMenu.Content class="w-[var(--bits-dropdown-menu-anchor-width)]">
 							<DropdownMenu.Item>
 								<span>Acme Inc</span>
 							</DropdownMenu.Item>

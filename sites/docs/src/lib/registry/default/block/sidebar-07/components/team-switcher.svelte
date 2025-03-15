@@ -2,10 +2,10 @@
 	import * as DropdownMenu from "$lib/registry/default/ui/dropdown-menu/index.js";
 	import * as Sidebar from "$lib/registry/default/ui/sidebar/index.js";
 	import { useSidebar } from "$lib/registry/default/ui/sidebar/index.js";
-	import ChevronsUpDown from "lucide-svelte/icons/chevrons-up-down";
-	import Plus from "lucide-svelte/icons/plus";
+	import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
+	import Plus from "@lucide/svelte/icons/plus";
 
-	// This should be `Component` after lucide-svelte updates types
+	// This should be `Component` after @lucide/svelte updates types
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let { teams }: { teams: { name: string; logo: any; plan: string }[] } = $props();
 	const sidebar = useSidebar();
@@ -39,7 +39,7 @@
 				{/snippet}
 			</DropdownMenu.Trigger>
 			<DropdownMenu.Content
-				class="w-[--bits-dropdown-menu-anchor-width] min-w-56 rounded-lg"
+				class="w-[var(--bits-dropdown-menu-anchor-width)] min-w-56 rounded-lg"
 				align="start"
 				side={sidebar.isMobile ? "bottom" : "right"}
 				sideOffset={4}

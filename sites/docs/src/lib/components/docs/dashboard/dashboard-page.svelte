@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Activity from "lucide-svelte/icons/activity";
-	import CreditCard from "lucide-svelte/icons/credit-card";
-	import DollarSign from "lucide-svelte/icons/dollar-sign";
-	import Download from "lucide-svelte/icons/download";
-	import Users from "lucide-svelte/icons/users";
+	import Activity from "@lucide/svelte/icons/activity";
+	import CreditCard from "@lucide/svelte/icons/credit-card";
+	import DollarSign from "@lucide/svelte/icons/dollar-sign";
+	import Download from "@lucide/svelte/icons/download";
+	import Users from "@lucide/svelte/icons/users";
 	import DashboardMainNav from "./main-nav.svelte";
 	import Overview from "./overview.svelte";
 	import RecentSales from "./recent-sales.svelte";
@@ -18,16 +18,8 @@
 </script>
 
 <div class="md:hidden">
-	<enhanced:img
-		src="$lib/img/examples/dashboard-light.png"
-		alt="Dashboard"
-		class="block dark:hidden"
-	></enhanced:img>
-	<enhanced:img
-		src="$lib/img/examples/dashboard-dark.png"
-		alt="Dashboard"
-		class="hidden dark:block"
-	></enhanced:img>
+	<img src="/img/examples/dashboard-light.png" alt="Dashboard" class="block dark:hidden" />
+	<img src="/img/examples/dashboard-dark.png" alt="Dashboard" class="hidden dark:block" />
 </div>
 <div class="hidden flex-col md:flex">
 	<div class="border-b">

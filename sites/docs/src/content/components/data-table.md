@@ -319,7 +319,7 @@ We'll start by defining the actions menu in our `data-table-actions.svelte` comp
 
 ```svelte showLineNumbers title="routes/payments/data-table-actions.svelte"
 <script lang="ts">
-  import Ellipsis from "lucide-svelte/icons/ellipsis";
+  import Ellipsis from "@lucide/svelte/icons/ellipsis";
   import { Button } from "$lib/components/ui/button/index.js";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
 
@@ -336,7 +336,7 @@ We'll start by defining the actions menu in our `data-table-actions.svelte` comp
         class="relative size-8 p-0"
       >
         <span class="sr-only">Open menu</span>
-        <Ellipsis class="size-4" />
+        <Ellipsis />
       </Button>
     {/snippet}
   </DropdownMenu.Trigger>
@@ -360,8 +360,7 @@ Now that we've defined the `<DataTableActions />` component, let's update our `a
 
 ```ts showLineNumbers title="routes/payments/columns.ts"
 import type { ColumnDef } from "@tanstack/table-core";
-import { createRawSnippet } from "svelte";
-import { renderSnippet } from "$lib/components/ui/data-table/index.js";
+import { renderComponent } from "$lib/components/ui/data-table/index.js";
 import DataTableActions from "./data-table-actions.svelte";
 
 export const columns: ColumnDef<Payment>[] = [
@@ -497,7 +496,7 @@ We'll start by creating a component to render a sortable email header button.
 ```svelte showLineNumbers title="routes/payments/data-table-email-button.svelte"
 <script lang="ts">
   import type { ComponentProps } from "svelte";
-  import ArrowUpDown from "lucide-svelte/icons/arrow-up-down";
+  import ArrowUpDown from "@lucide/svelte/icons/arrow-up-down";
   import { Button } from "$lib/components/ui/button/index.js";
 
   let { variant = "ghost", ...restProps }: ComponentProps<typeof Button> =
@@ -506,7 +505,7 @@ We'll start by creating a component to render a sortable email header button.
 
 <Button {variant} {...restProps}>
   Email
-  <ArrowUpDown class="ml-2 size-4" />
+  <ArrowUpDown class="ml-2" />
 </Button>
 ```
 
@@ -568,10 +567,7 @@ We can now update the `email` header cell to add sorting controls.
 
 ```ts showLineNumbers title="src/routes/payments/columns.ts"
 import type { ColumnDef } from "@tanstack/table-core";
-import {
-  renderComponent,
-  renderSnippet,
-} from "$lib/components/ui/data-table/index.js";
+import { renderComponent } from "$lib/components/ui/data-table/index.js";
 import DataTableEmailButton from "./data-table-email-button.svelte";
 
 export const columns: ColumnDef<Payment>[] = [
@@ -843,10 +839,7 @@ Now that we have a new component, we can add a `select` column definition to ren
 
 ```ts showLineNumbers title="routes/payments/columns.ts"
 import type { ColumnDef } from "@tanstack/table-core";
-import {
-  renderSnippet,
-  renderComponent,
-} from "$lib/components/ui/data-table/index.js";
+import { renderComponent } from "$lib/components/ui/data-table/index.js";
 import { Checkbox } from "$lib/components/ui/checkbox/index.js";
 
 export const columns: ColumnDef<Payment>[] = [
